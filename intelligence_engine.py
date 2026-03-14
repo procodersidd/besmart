@@ -13,7 +13,8 @@ os.environ["SUPABASE_URL"] = "https://wlayjqoaofcwkzavctfh.supabase.co"
 
 os.environ["SUPABASE_KEY"] = "sb_publishable_lQx5zbupUfHw6zBqhFMZFQ_JzQheqTe"
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.5)
+# Change this line in your intelligence_engine.py
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash", temperature=0.3)
 search_tool = SerperDevTool()
 
 # --- THE ELITE AGENTS ---

@@ -1,6 +1,7 @@
-streamlit
-crewai
-crewai-tools
-langchain-google-genai
-supabase
-python-dotenv
+flask
+gunicorn
+crewai==1.10.1
+crewai-tools==1.10.1
+langchain-google-genai==4.2.1
+supabase==2.13.0
+python-dotenv==1.0.1
