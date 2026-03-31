@@ -1,28 +1,23 @@
-import os
 from crewai.tools import tool
 from supabase import create_client, Client
 
-# These will be loaded from your main file or .env
-url = os.environ.get("https://wlayjqoaofcwkzavctfh.supabase.co")
-key = os.environ.get("sb_publishable_lQx5zbupUfHw6zBqhFMZFQ_JzQheqTe")
-
 @tool("DatabaseWriter")
 def save_to_cloud(headline: str, content: str):
-    """
-    Saves a completed geopolitical intelligence report to the cloud database.
-    Inputs:
-        headline: The topic of the inquiry.
-        content: The full synthesized report/manifest.
-    """
     try:
+        # 🔴 HARDCODED (as you asked)
+        url = "https://wlayjqoaofcwkzavctfh.supabase.co"
+        key = "sb_publishable_lQx5zbupUfHw6zBqhFMZFQ_JzQheqTe"
+
         supabase: Client = create_client(url, key)
+
         data = {
             "headline": headline,
-            "report_content": content,
-            "created_at": "now()" # Supabase handles the timestamp
+            "report_content": content
         }
-        # Ensure your table name is 'intelligence_reports'
+
         supabase.table("intelligence_reports").insert(data).execute()
-        return "✅ Success: The Intelligence Manifest has been archived in the cloud."
+
+        return "✅ Report saved to cloud."
+
     except Exception as e:
         return f"❌ Database Error: {str(e)}"
