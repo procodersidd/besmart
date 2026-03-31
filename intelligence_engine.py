@@ -15,7 +15,7 @@ os.environ["SUPABASE_KEY"] = "sb_publishable_lQx5zbupUfHw6zBqhFMZFQ_JzQheqTe"
 
 # Change this line in your intelligence_engine.py
 llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash", temperature=0.3)
-search_tool = SerperDevTool()
+search_tool = SerperDevTool()  
 
 # --- THE ELITE AGENTS ---
 historian = Agent(
